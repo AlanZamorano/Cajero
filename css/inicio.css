@@ -1,0 +1,95 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(15deg,rgb(88 199 250), rgb(53, 53, 53), #3c67e3,rgb(53, 53, 53),rgb(88 199 250), rgb(53, 53, 53), #3c67e3);
+    background-size: 400%;
+    animation: bodyB 10s linear infinite;
+}
+
+@keyframes bodyB{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
+.row{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-right: 0px !important;
+  }
+
+  /* botones */
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+
+  .titulo h2{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(90deg, #ff0000,#ffff00,#ff00f3,#1d1d1d,#0033ff,#ff00c4,#ff0000,#1d1d1d);
+    background-size: 400%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: titulo 10s linear infinite;
+}
+ 
+@keyframes titulo{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+  
+  }
+  
+  
+  .btn {
+    background: #191c29;
+    height: 200px;
+    position: relative;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    font-family: cursive;
+  }
+  
+  .btn:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 2s;
+  }
+
+  .btn:hover:before, .btn:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .btn::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "";
+    width: 105%;
+    height: 105%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 45%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      animation: spin 2s linear infinite;
+  }
+    
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
